@@ -26,6 +26,7 @@ struct ContentView: View {
 	
 	@State private var isActive = true
 	@State private var showingEditScreen = false
+	@State private var showingSettings = false
 
 	var body: some View {
 		ZStack {
@@ -85,6 +86,16 @@ struct ContentView: View {
 			
 			VStack {
 				HStack {
+					Button(action: {
+						self.showingSettings = true
+					}) {
+						Image(systemName: "gear")
+							.padding()
+							.background(Color.black.opacity(0.7))
+							.clipShape(Circle())
+					}
+					
+					
 					Spacer()
 					
 					Button(action: {
@@ -160,6 +171,9 @@ struct ContentView: View {
 		}
 		.sheet(isPresented: $showingEditScreen, onDismiss: resetCards) {
 			EditCard()
+		}
+		.sheet(isPresented: $showingSettings, onDismiss: resetCards) {
+			SettingsView()
 		}
 		.onAppear(perform: resetCards)
 	}
