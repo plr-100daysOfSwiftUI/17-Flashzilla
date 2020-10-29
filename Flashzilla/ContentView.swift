@@ -120,7 +120,7 @@ struct ContentView: View {
 							.clipShape(Circle())
 						}
 						.accessibility(label: Text("Correct"))
-						.accessibility(hint: Text("MArk your answer as being correct"))
+						.accessibility(hint: Text("Mark your answer as being correct"))
 					}
 					.foregroundColor(.white)
 					.font(.largeTitle)
