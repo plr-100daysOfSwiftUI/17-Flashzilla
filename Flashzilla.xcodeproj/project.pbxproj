@@ -16,6 +16,7 @@
 		8B1D4877254005A400D95FE9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B1D4876254005A400D95FE9 /* Preview Assets.xcassets */; };
 		8B1D487A254005A400D95FE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B1D4878254005A400D95FE9 /* LaunchScreen.storyboard */; };
 		8B850E2B254B720800FAF248 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8B850E2A254B720800FAF248 /* README.md */; };
+		8B850E2E254B7A6500FAF248 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B850E2D254B7A6500FAF248 /* SettingsView.swift */; };
 		8BE2CB3B2545799E00EF6864 /* EditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE2CB3A2545799E00EF6864 /* EditCard.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		8B1D4879254005A400D95FE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B1D487B254005A400D95FE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B850E2A254B720800FAF248 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8B850E2D254B7A6500FAF248 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		8BE2CB3A2545799E00EF6864 /* EditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,6 +73,7 @@
 				8B08BB292542A517004042F6 /* Card.swift */,
 				8B08BB2C2542A689004042F6 /* CardView.swift */,
 				8BE2CB3A2545799E00EF6864 /* EditCard.swift */,
+				8B850E2D254B7A6500FAF248 /* SettingsView.swift */,
 				8B1D4873254005A400D95FE9 /* Assets.xcassets */,
 				8B1D4878254005A400D95FE9 /* LaunchScreen.storyboard */,
 				8B1D487B254005A400D95FE9 /* Info.plist */,
@@ -158,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B850E2E254B7A6500FAF248 /* SettingsView.swift in Sources */,
 				8B1D486E254005A400D95FE9 /* AppDelegate.swift in Sources */,
 				8B1D4870254005A400D95FE9 /* SceneDelegate.swift in Sources */,
 				8B1D4872254005A400D95FE9 /* ContentView.swift in Sources */,
