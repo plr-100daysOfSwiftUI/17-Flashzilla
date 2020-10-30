@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+/*
+TODO: store the settings
+*/
+
 struct SettingsView: View {
 	@Environment(\.presentationMode) var presentationMode
 	@Binding var repeatQuestion: Bool
