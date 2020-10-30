@@ -32,6 +32,7 @@ struct ContentView: View {
 	@State private var isActive = true
 	@State private var showingSheet = false
 	@State private var sheetType: SheetType = .settings
+	@State private var repeatQuestion = false
 
 	var body: some View {
 		ZStack {
@@ -179,7 +180,7 @@ struct ContentView: View {
 		.sheet(isPresented: $showingSheet, onDismiss: resetCards) {
 			switch sheetType {
 			case .settings:
-				SettingsView()
+				SettingsView(repeatQuestion: $repeatQuestion)
 			case .editCard:
 				EditCard()
 			}

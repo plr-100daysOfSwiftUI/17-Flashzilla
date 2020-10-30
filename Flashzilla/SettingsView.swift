@@ -9,14 +9,16 @@ import SwiftUI
 
 struct SettingsView: View {
 	@Environment(\.presentationMode) var presentationMode
+	@Binding var repeatQuestion: Bool
 	
 	var body: some View {
 		NavigationView {
-			List {
-				Text("Settings")
-			}
-			.navigationBarTitle(Text("Settings"))
-			.navigationBarItems(trailing: Button("Done", action: dismiss))
+				HStack {
+					Toggle("Repeat the question when the answer is wrong", isOn: $repeatQuestion)
+				}
+				.padding()
+				.navigationBarTitle(Text("Settings"))
+				.navigationBarItems(trailing: Button("Done", action: dismiss))
 			
 		}
 	}
@@ -29,6 +31,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
 	static var previews: some View {
-		SettingsView()
+		SettingsView(repeatQuestion: .constant(true))
 	}
 }
