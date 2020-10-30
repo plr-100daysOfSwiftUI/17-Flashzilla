@@ -16,6 +16,11 @@ extension View {
 
 struct ContentView: View {
 	
+	enum SheetType {
+		case settings
+		case editCard
+	}
+	
 	static let timeAllowed = 100
 	
 	@Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
@@ -25,8 +30,8 @@ struct ContentView: View {
 	let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 	
 	@State private var isActive = true
-	@State private var showingEditScreen = false
-	@State private var showingSettings = false
+	@State private var showingSheet = false
+	@State private var sheetType: SheetType = .settings
 
 	var body: some View {
 		ZStack {
@@ -87,7 +92,8 @@ struct ContentView: View {
 			VStack {
 				HStack {
 					Button(action: {
-						self.showingSettings = true
+						self.sheetType = .settings
+						self.showingSheet = true
 					}) {
 						Image(systemName: "gear")
 							.padding()
@@ -99,7 +105,8 @@ struct ContentView: View {
 					Spacer()
 					
 					Button(action: {
-						self.showingEditScreen = true
+						self.sheetType = .editCard
+						self.showingSheet = true
 					}) {
 						Image(systemName: "plus.circle")
 							.padding()
@@ -169,11 +176,13 @@ struct ContentView: View {
 				self.isActive = true
 			}
 		}
-		.sheet(isPresented: $showingEditScreen, onDismiss: resetCards) {
-			EditCard()
-		}
-		.sheet(isPresented: $showingSettings, onDismiss: resetCards) {
-			SettingsView()
+		.sheet(isPresented: $showingSheet, onDismiss: resetCards) {
+			switch sheetType {
+			case .settings:
+				SettingsView()
+			case .editCard:
+				EditCard()
+			}
 		}
 		.onAppear(perform: resetCards)
 	}
