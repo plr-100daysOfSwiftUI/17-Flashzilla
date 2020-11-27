@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-/*
-TODO: store the settings
-*/
-
 struct SettingsView: View {
 	@Environment(\.presentationMode) var presentationMode
 	@Binding var repeatQuestion: Bool
@@ -28,6 +24,7 @@ struct SettingsView: View {
 	}
 	
 	func dismiss() {
+		UserDefaults.standard.set(repeatQuestion, forKey: UserDefaultsKeys.repeatQuestion.rawValue)
 		presentationMode.wrappedValue.dismiss()
 	}
 	
