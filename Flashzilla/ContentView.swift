@@ -29,7 +29,7 @@ struct ContentView: View {
 	@State private var timeRemaining = timeAllowed
 	let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 	
-	@State private var isActive = true
+	@State private var isActive = false
 	@State private var showingSheet = false
 	@State private var sheetType: SheetType = .settings
 	@State private var repeatQuestion = false
@@ -207,8 +207,10 @@ struct ContentView: View {
 	
 	func resetCards() {
 		timeRemaining = Self.timeAllowed
-		isActive = true
 		loadData()
+		if !cards.isEmpty {
+			isActive = true
+		}
 	}
 	
 	func loadData() {
