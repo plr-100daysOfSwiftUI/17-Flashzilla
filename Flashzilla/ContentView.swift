@@ -14,6 +14,10 @@ extension View {
 	}
 }
 
+enum UserDefaultsKeys: String {
+	case repeatQuestion
+}
+
 struct ContentView: View {
 	
 	enum SheetType {
