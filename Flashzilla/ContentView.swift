@@ -195,13 +195,11 @@ struct ContentView: View {
 	func removeCard(at index: Int, isCorrect: Bool) {
 		guard index >= 0 else { return }
 		
-		/*
-		TODO: reinsertion of the removed card causes problems. The frontmost card is no longer allowing hits.
-		*/
-		
 		let removedCard = cards.remove(at: index)
 		if !isCorrect && repeatQuestion {
-			cards.insert(removedCard, at: 0)
+			DispatchQueue.main.asyncAfter(deadline: .now() + 0.5 ) {
+				cards.insert(removedCard, at: 0)
+			}
 		}
 		
 		if cards.isEmpty {
