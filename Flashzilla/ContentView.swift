@@ -15,7 +15,7 @@ extension View {
 }
 
 enum UserDefaultsKeys: String {
-	case repeatQuestion
+	case RepeatQuestion, Cards
 }
 
 struct ContentView: View {
@@ -36,7 +36,7 @@ struct ContentView: View {
 	@State private var isActive = false
 	@State private var showingSheet = false
 	@State private var sheetType: SheetType = .settings
-	@State private var repeatQuestion = UserDefaults.standard.bool(forKey: UserDefaultsKeys.repeatQuestion.rawValue)
+	@State private var repeatQuestion = UserDefaults.standard.bool(forKey: UserDefaultsKeys.RepeatQuestion.rawValue)
 
 	var body: some View {
 		ZStack {
@@ -218,7 +218,7 @@ struct ContentView: View {
 	}
 	
 	func loadData() {
-		if let data = UserDefaults.standard.data(forKey: "Cards") {
+		if let data = UserDefaults.standard.data(forKey: UserDefaultsKeys.Cards.rawValue) {
 			if let decoded = try? JSONDecoder().decode([Card].self, from: data) {
 				self.cards = decoded
 			}

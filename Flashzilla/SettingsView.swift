@@ -24,7 +24,7 @@ struct SettingsView: View {
 	}
 	
 	func dismiss() {
-		UserDefaults.standard.set(repeatQuestion, forKey: UserDefaultsKeys.repeatQuestion.rawValue)
+		UserDefaults.standard.set(repeatQuestion, forKey: UserDefaultsKeys.RepeatQuestion.rawValue)
 		presentationMode.wrappedValue.dismiss()
 	}
 	

@@ -47,7 +47,7 @@ struct EditCard: View {
 	}
 	
 	func loadData() {
-		if let data = UserDefaults.standard.data(forKey: "Cards") {
+		if let data = UserDefaults.standard.data(forKey: UserDefaultsKeys.Cards.rawValue) {
 			if let decoded = try? JSONDecoder().decode([Card].self, from: data) {
 				self.cards = decoded
 			}
@@ -56,7 +56,7 @@ struct EditCard: View {
 	
 	func saveData() {
 		if let data = try? JSONEncoder().encode(cards) {
-			UserDefaults.standard.set(data, forKey: "Cards")
+			UserDefaults.standard.set(data, forKey: UserDefaultsKeys.Cards.rawValue)
 		}
 	}
 	
