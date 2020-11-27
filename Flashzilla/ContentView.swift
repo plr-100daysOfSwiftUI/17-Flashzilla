@@ -36,7 +36,7 @@ struct ContentView: View {
 	@State private var isActive = false
 	@State private var showingSheet = false
 	@State private var sheetType: SheetType = .settings
-	@State private var repeatQuestion = false
+	@State private var repeatQuestion = UserDefaults.standard.bool(forKey: UserDefaultsKeys.repeatQuestion.rawValue)
 
 	var body: some View {
 		ZStack {
